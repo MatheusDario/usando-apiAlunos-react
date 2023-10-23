@@ -13,7 +13,7 @@ function* loginRequest({ payload }) {
     const response = yield call(axios.post, '/tokens', payload);
     yield put(actions.loginSuccess({ ...response.data }));
 
-    toast.success('Login realizado!');
+    toast.success('Você fez login');
 
     axios.defaults.headers.Authorization = `Bearer ${response.data.token}`;
 
