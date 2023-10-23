@@ -12,9 +12,10 @@ import history from '../../../services/history';
 function* loginRequest({ payload }) {
   try {
     const response = yield call(axios.post, '/tokens', payload);
+    const { errors } = response.data;
 
-    if (response.data.errors) {
-      toast.error('E-mail ou Senha é inválido');
+    if (errors) {
+      errors.map((error) => toast.error(error));
       return yield put(actions.loginFailure());
     }
     yield put(actions.loginSuccess({ ...response.data }));
