@@ -21,3 +21,11 @@ export const ProfilePicture = styled.div`
     height: 36px;
     border-radius: 50%;
 }`;
+
+export const Title = styled.h1`
+  color: #7c7c7c;
+  text-align: center;
+  font-weight: bolder;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 19pt;
+`;
