@@ -3,17 +3,19 @@ import { get } from 'lodash';
 import { isEmail, isInt, isFloat } from 'validator';
 import { toast } from 'react-toastify';
 import { useDispatch } from 'react-redux';
+import { FaUserCircle, FaEdit } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import { Container } from '../../styles/GlobalStyles';
-import { Title, Form } from './styled';
+import { Title, Form, ProfilePicture } from './styled';
 import Loading from '../../components/Loading';
 import axios from '../../services/axios';
 import history from '../../services/history';
 import * as actions from '../../store/modules/auth/actions';
 
 export default function Aluno({ match }) {
-  const id = get(match, 'params.id', 0);
+  const id = get(match, 'params.id', '');
   const dispatch = useDispatch();
   const [nome, setNome] = useState('');
   const [sobrenome, setSobrenome] = useState('');
@@ -21,6 +23,7 @@ export default function Aluno({ match }) {
   const [idade, setIdade] = useState('');
   const [peso, setPeso] = useState('');
   const [altura, setAltura] = useState('');
+  const [foto, setFoto] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -31,7 +34,7 @@ export default function Aluno({ match }) {
         setIsLoading(true);
         const { data } = await axios.get(`/alunos/${id}`);
         const Foto = get(data, 'Fotos[0].url', '');
-        console.log(Foto);
+        setFoto(Foto);
 
         setNome(data.nome);
         setSobrenome(data.sobrenome);
@@ -122,6 +125,19 @@ export default function Aluno({ match }) {
     <Container>
       <Loading isLoading={isLoading} />
       <Title>{id ? 'Editar Aluno' : 'Cadastrar um Novo Aluno'}</Title>
+
+      {id && (
+        <ProfilePicture>
+          {foto ? (
+            <img crossOrigin="" src={foto} alt={nome} />
+          ) : (
+            <FaUserCircle size={150} />
+          )}
+          <Link to={`/fotos/${id}`}>
+            <FaEdit size={23} />
+          </Link>
+        </ProfilePicture>
+      )}
 
       <Form onSubmit={handleSubmit}>
         <label htmlFor="nome">
