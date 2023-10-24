@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const AlunoContainer = styled.div`
   margin-top: 20px;
@@ -28,4 +29,18 @@ export const Title = styled.h1`
   font-weight: bolder;
   font-family: 'Courier New', Courier, monospace;
   font-size: 19pt;
+`;
+
+export const NovoAluno = styled(Link)`
+  display: block;
+  padding: 10px;
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  color: black;
+  font-size: 12pt;
+
+  &&:hover {
+    color: red;
+    text-decoration: underline;
+  }
 `;
