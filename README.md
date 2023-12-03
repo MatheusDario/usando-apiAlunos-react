@@ -1,16 +1,22 @@
-# Getting Started with Create React App
+<h1 align="center">Consumindo API-REST</h1>
+<p align="justify">
+  Projeto consiste em consumir a api-rest desenvolvida anteriomente em NodeJS.
+  Este front-end utiliza como base a biblioteca do react.
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h2>🛠️ Construido com</h2>
 
-## Available Scripts
+<ul>
+    <li>React</li>
+    <li>React Dom</li>
+    <li>React Saga</li>
+    <li>React Redux</li>
+    <li>React Persist</li>
+    <li>React Toastify</li>
+</ul>
 
-In the project directory, you can run:
+<h2>📦 Explicando o uso das ferramentas</h2>
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
+<p align="justify">
+  O front-end consome uma api-rest quee foi desenvolvido anteriormente utilizando o NodeJS. A base do projeto é o react e com o intuito de manter a ordem e o padrão no projeto utilizei o eslint e o prettier.
+</p>
