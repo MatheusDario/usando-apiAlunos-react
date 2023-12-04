@@ -9,6 +9,7 @@ import history from './services/history';
 import GlobalStyles from './styles/GlobalStyles';
 import Header from './components/Header';
 import Routes from './routes';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             className="toast-container"
           />
         </Router>
+        <Footer />
       </PersistGate>
     </Provider>
   );
