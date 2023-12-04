@@ -74,7 +74,7 @@ export default function Fotos({ match }) {
 
       <Form>
         <label htmlFor="foto">
-          {foto ? <img crossOrigin="" src={foto} alt="Foto" />
+          {foto ? <img title="Cliquei para alterar sua foto" crossOrigin="" src={foto} alt="Foto" />
             : <span>Clique aqui para adicionar a sua foto de Perfil</span>}
 
           <input

@@ -1,6 +1,10 @@
 import React from 'react';
 import {
-  FaHome, FaUserAlt, FaSignInAlt, FaCircle, FaPowerOff,
+  FaHome,
+  FaUserAlt,
+  FaSignInAlt,
+  FaCircle,
+  FaPowerOff,
 } from 'react-icons/fa';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import { useSelector, useDispatch } from 'react-redux';
@@ -21,12 +25,12 @@ export default function Header() {
 
   return (
     <Nav>
-      <Link to="/">
+      <Link title="Home" to="/">
         {' '}
         <FaHome size={24} />
         {' '}
       </Link>
-      <Link to="/register">
+      <Link title="Alterar seus dados" to="/register">
         {' '}
         <FaUserAlt size={22} />
         {' '}
@@ -34,18 +38,18 @@ export default function Header() {
       {isLoggedIn ? (
         <Link onClick={handleLogout} to="/logout">
           {' '}
-          <FaPowerOff size={24} />
+          <FaPowerOff title="Sair" size={24} />
           {' '}
         </Link>
       ) : (
-        <Link to="/login">
-          { ' ' }
+        <Link title="Entrar" to="/login">
+          {' '}
           <FaSignInAlt size={24} />
           {' '}
         </Link>
       )}
 
-      {isLoggedIn && <FaCircle size={22} color="#66ff33" />}
+      {isLoggedIn && <FaCircle size={22} color="#04D98B" />}
     </Nav>
   );
 }

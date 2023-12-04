@@ -2,7 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { get } from 'lodash';
 import {
-  FaUserCircle, FaEdit, FaWindowClose, FaExclamation,
+  FaUserCircle,
+  FaEdit,
+  FaWindowClose,
+  FaExclamation,
 } from 'react-icons/fa';
 
 import { toast } from 'react-toastify';
@@ -55,9 +58,7 @@ export default function Alunos() {
   return (
     <Container>
       <Loading isLoading={isLoading} />
-      <Title>Alunos</Title>
-
-      <NovoAluno to="/aluno/">Cadastrar um novo Aluno</NovoAluno>
+      <Title>Alunos Cadastrados</Title>
       <AlunoContainer>
         {alunos.map((aluno, index) => (
           <div key={String(aluno.id)}>
@@ -73,11 +74,11 @@ export default function Alunos() {
             <span>{aluno.email}</span>
 
             <Link to={`/aluno/${aluno.id}/edit`}>
-              <FaEdit color="green" size={16} />
+              <FaEdit color="#04D9B2" size={19} />
             </Link>
 
             <Link onClick={handleDeleteAsk} to={`/aluno/${aluno.id}/delete`}>
-              <FaWindowClose color="red" size={16} />
+              <FaWindowClose color="#ED6A5A" size={19} />
             </Link>
 
             <FaExclamation
@@ -90,6 +91,7 @@ export default function Alunos() {
           </div>
         ))}
       </AlunoContainer>
+      <NovoAluno to="/aluno/">Cadastrar um novo Aluno</NovoAluno>
     </Container>
   );
 }

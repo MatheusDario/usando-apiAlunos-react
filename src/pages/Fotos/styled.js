@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
 export const Title = styled.h1`
-  color: #7c7c7c;
+  color: white;
   text-align: center;
   font-weight: bolder;
   font-family: 'Courier New', Courier, monospace;
-  font-size: 19pt;
+  font-size: 2.1em;
 `;
 
 export const Form = styled.form`
@@ -40,7 +40,7 @@ export const Form = styled.form`
     display: none;
 
     &:focus {
-      border: 1px solid #C3073F;
+      border: 1px solid #04D98B;
     }
   }
 `;

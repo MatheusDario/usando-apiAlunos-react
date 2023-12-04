@@ -91,12 +91,22 @@ export default function Aluno({ match }) {
       setIsLoading(true);
       if (id) {
         await axios.put(`/alunos/${id}`, {
-          nome, sobrenome, email, idade, peso, altura,
+          nome,
+          sobrenome,
+          email,
+          idade,
+          peso,
+          altura,
         });
         toast.success('Aluno(a) editado(a) com Sucesso!');
       } else {
         const { data } = await axios.post('/alunos/', {
-          nome, sobrenome, email, idade, peso, altura,
+          nome,
+          sobrenome,
+          email,
+          idade,
+          peso,
+          altura,
         });
 
         history.push(`/aluno/${data.id}/edit`);
@@ -133,8 +143,8 @@ export default function Aluno({ match }) {
           ) : (
             <FaUserCircle size={150} />
           )}
-          <Link to={`/fotos/${id}`}>
-            <FaEdit size={23} />
+          <Link title="Alterar foto" to={`/fotos/${id}`}>
+            <FaEdit size={25} />
           </Link>
         </ProfilePicture>
       )}

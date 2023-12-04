@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
 export const Title = styled.h1`
-  color: #7c7c7c;
+  color: white;
   text-align: center;
   font-weight: bolder;
   font-family: 'Courier New', Courier, monospace;
-  font-size: 19pt;
+  font-size: 2.2em;
 `;
 
 export const Form = styled.form`
@@ -20,7 +20,7 @@ export const Form = styled.form`
   }
 
   span {
-    color: gray;
+    color: white;
     margin: 0px 5px 5px;
     font-weight: bolder;
     font-family: 'Courier New', Courier, monospace;
